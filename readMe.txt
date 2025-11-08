@@ -5,7 +5,7 @@ grid, traversing through every cell possible until it has found all the markers.
 a path to the bottom right corner to drop off the collected markers. It will drop off the
 markers automatically if it cannot find a viable path to the corner. 
 
-To run the program, first compile the code:
+First compile the code by running this command in the terminal:
 gcc main.c arena.c robot.c graphics.c dfs.c bfs.c -o robotArena -lm
 
 Then run the program:
