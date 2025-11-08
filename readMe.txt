@@ -1,7 +1,7 @@
 This program simulates a robot navigating an grid arena filled with obstacles and markers. 
 The obstacles, markers and the grid itself is drawn on the background layer, while the
 robot is drawn on the foreground. The robot navigates the arena by conducting a dfs on the
-grid, traversing through every cell until it has found all the markers. It then calculates
+grid, traversing through every cell possible until it has found all the markers. It then calculates
 a path to the bottom right corner to drop off the collected markers. It will drop off the
 markers automatically if it cannot find a viable path to the corner. 
 
