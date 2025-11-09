@@ -190,19 +190,23 @@ void floodFill(
 }
 
 void relocateSpawnIfBlocked(Arena *a, int *row, int *col) {
-    if (!a) return;
+    if (!a || !row || !col) return;
 
-    // If the tile is already empty no relocation is needed
-    if (a->grid[*row][*col] != obstacle)
-        return;
+    // If current tile is already free then no need to run flood fill
+    if (a->grid[*row][*col] != obstacle) return;
 
     int visited[MAX_ROWS][MAX_COLS];
     memset(visited, 0, sizeof(visited));
-    
-    int bestRow = -1, bestCol = -1, bestDistance = 99999999;
+
+    int bestRow = -1, bestCol = -1;
+    int bestDistance = 999999999;
+
     floodFill(a, *row, *col, *row, *col, visited, &bestRow, &bestCol, &bestDistance);
 
+    if (bestRow != -1 && bestCol != -1) {
+        *row = bestRow;
+        *col = bestCol;
+        return;
+    }
 }
-
-
 

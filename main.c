@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
         placeRandomObstacles(&a, (a.rows * a.cols) / 4);
     } 
     else if (strcmp(inputMapMode, "circle") == 0) {
-        placeCircularBoundary(&a, a.rows);
+        placeCircularBoundary(&a, a.rows/2);
     }
 
     placeRandomMarkers(&a, numberOfMarkers);
