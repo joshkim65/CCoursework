@@ -79,8 +79,8 @@ void placeRandomObstacles(Arena *a, int count) {
 }
 
 void placeCircularBoundary(Arena *a, int radius) {
-    int centerR = (a->rows - 1) / 2;
-    int centerC = (a->cols - 1) / 2;
+    int centerR = (a->rows-1) / 2;
+    int centerC = (a->cols-1) / 2;
     int maxPossible = 0;
 
     if (a->rows < a->cols) {

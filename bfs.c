@@ -31,10 +31,11 @@ int bfsPath(Arena *arena, Cell startCell, Cell goalCell, Cell outPath[], int *ou
     memset(visited, 0, sizeof(visited));
 
     Cell parent[MAX_ROWS][MAX_COLS];
-    for (int r = 0; r < arena->rows; r++)
-        for (int c = 0; c < arena->cols; c++)
+    for (int r = 0; r < arena->rows; r++) {
+        for (int c = 0; c < arena->cols; c++) {
             parent[r][c] = (Cell){ -1, -1 };
-
+        }
+    }
     Cell queue[MAX_ROWS * MAX_COLS];
     int front = 0, back = 0;
 
@@ -77,7 +78,7 @@ int bfsPath(Arena *arena, Cell startCell, Cell goalCell, Cell outPath[], int *ou
     for (int i = 0; i < length / 2; i++) {
         Cell temp = outPath[i];
         outPath[i] = outPath[length - 1 - i];
-        outPath[length - 1 - i] = temp;
+        outPath[length-1-i] = temp;
     }
 
     *outPathLength = length;
@@ -86,8 +87,8 @@ int bfsPath(Arena *arena, Cell startCell, Cell goalCell, Cell outPath[], int *ou
 
 void followPath(Robot *r, Arena *a, Cell path[], int len) {
     for (int i = 1; i < len; i++) {
-        int dr = path[i].r - path[i - 1].r;
-        int dc = path[i].c - path[i - 1].c;
+        int dr = path[i].r - path[i-1].r;
+        int dc = path[i].c - path[i-1].c;
 
         Direction dir = stepDir(dr, dc);
         face(r, dir);
