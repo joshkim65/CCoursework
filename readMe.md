@@ -30,3 +30,5 @@ An example of this program would be:
 
 This would spawn the robot at position (5, 5), facing up, inside a grid with dimensions
 15x15 with the obstacles arranged in a circle, and 20 markers for the robot to collect. 
+
+If the robot spawns inside an obstacle, a flood fill will be carried out in order to find the nearest free cell.
